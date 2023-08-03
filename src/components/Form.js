@@ -8,7 +8,8 @@ export default function Form(){
         lastName: "",
         email: "",
         comments: "",
-        isFriendly: true
+        isFriendly: true,
+        employment: ""
     })
 
      
@@ -58,6 +59,37 @@ export default function Form(){
                     name="isFriendly"
             />
             <label htmlFor="isFriendly">Are you friendly?</label>
+            <br />
+            <br />
+
+            <fieldset>
+                <legend>Current employment status</legend>
+
+                <input type='radio'
+                        id="unemployed"
+                        name="employment"
+                        value="unemployed"
+                        onChange={handleChange} 
+                        checked={formData.employment === "unemployed"}/>
+                <label htmlFor="unemployed">Unemployed</label>
+
+                <input type='radio'
+                        id="part-time"
+                        name="employment"
+                        value="part-time"
+                        onChange={handleChange} 
+                        checked = {formData.employment === 'part-time'}/>
+                <label htmlFor="part-time">Part-time</label>
+
+                <input type='radio'
+                        id="full-time"
+                        name="employment"
+                        value="full-time"
+                        onChange={handleChange}
+                        checked={formData.employment === 'full-time'} />
+                <label htmlFor="full-time">Full-time</label>
+
+            </fieldset>
         </form>
     )
 }
