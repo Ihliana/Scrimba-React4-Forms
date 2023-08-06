@@ -25,8 +25,14 @@ export default function Form(){
         })
     }
 
+    function handleSubmit(event){
+            //prevent from refreshing the page
+            event.preventDefault()
+            console.log(formData)
+    }
+
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input type="text"
                     placeholder="First Name"
                     onChange={handleChange} 
@@ -109,7 +115,9 @@ export default function Form(){
                 <option value='violet'>Violet</option>
             </select>
 
-
+            <br />
+            <br />
+            <button>Submit</button>
         </form>
     )
 }
